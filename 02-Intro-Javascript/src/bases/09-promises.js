@@ -1,5 +1,5 @@
 
-import { getHeroeByIdExampleWithObject } from './bases/08-export-examples'
+import { getHeroeByIdExampleWithObject } from './bases/08-export-examples';
 
 //version without async
 
@@ -19,14 +19,9 @@ import { getHeroeByIdExampleWithObject } from './bases/08-export-examples'
 //     console.log(heroe,"el then de la promesa");
 // })
 // .catch(err => console.warn(err));
-
-
-
-
-
-
+  
 ///Async version
-const getHeroeByIdAsync = (id) => {
+export const getHeroeByIdAsync = (id) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             const heroe =  getHeroeByIdExampleWithObject(id);
@@ -39,7 +34,7 @@ const getHeroeByIdAsync = (id) => {
             }
         }, 2000);
     })
-}
+};
 
 getHeroeByIdAsync(5)
     .then(heroe => console.log(heroe, "the async promise"))
